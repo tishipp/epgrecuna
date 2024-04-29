@@ -55,16 +55,16 @@ function doKeywordReservation( $wave_type = '*', $shm_id ) {
 				switch( $wave_type ){
 					case 'GR':
 						if( !(boolean)$val->typeGR )
-							continue;
+							continue 2;
 						break;
 					case 'BS':
 					case 'CS':
 						if( !(boolean)$val->typeBS && !(boolean)$val->typeCS )
-							continue;
+							continue 2;
 						break;
 					case 'EX':
 						if( !(boolean)$val->typeEX )
-							continue;
+							continue 2;
 						break;
 //					case '*':
 //						break;
@@ -382,7 +382,7 @@ function storeProgram( $type, $xmlfile ) {
 						case 0:
 							// 冒頭の余分な部分をpf1つ前を残して切り捨て
 							if( strcmp( $records[$cnt]['starttime'], $event_pf[0]['starttime'] ) < 0 )
-								continue;
+								continue 2;
 							else{
 								$pf_trim = 1;
 								if( $cnt > 0 ){

@@ -283,16 +283,16 @@ function search_reccmd( $rec_id ){
 }
 
 function get_ipckey( $id ){
-/*
+
 	if( !file_exists( FTOK_KEY ) ){
 		$handle = fopen( FTOK_KEY, 'w' );
 		fwrite( $handle, 'a' );
 		fclose( $handle );
 //		exec( 'sync' );
 	}
-	return ftok( FTOK_KEY, $id );	// ftok()は、仕様上で唯一性を担保できないバグあり
-*/
-	return $id;
+	return ftok( FTOK_KEY, chr($id) );	// ftok()は、仕様上で唯一性を担保できないバグあり
+
+//	return $id;
 }
 
 function run_user_regulate(){

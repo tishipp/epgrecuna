@@ -1,3 +1,4 @@
+php-cgi simpleReservation.php program_id=40289
 <?php
 include_once('config.php');
 include_once( INSTALL_PATH . '/DBRecord.class.php' );

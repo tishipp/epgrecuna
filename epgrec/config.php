@@ -4,8 +4,27 @@
 // config.php内の$GR_CHANNEL_MAPは無視されます
 
 
+// JCOM東関東 地上デジタルチャンネルマップ
+// 識別子 => チャンネル番号
+$GR_CHANNEL_MAP = array(
+        'GR27' => '27',         // NHK
+        'GR26' => '26',         // 教育
+        'GR25' => '25',         // 日テレ
+        'GR22' => '22',         // 東京
+        'GR21' => '21',         // フジ
+        'GR24' => '24',         // テレ朝
+        'GR23' => '23',         // テレ東
+        'GR20' => '20',         // MX TV
+        'GR15' => '15',         // TVK
+        'GR18' => '18',         // 千葉
+//        'GR14' => '14',         // 大学
+        'GR13' => '13',         // J:COMチャンネルHD
+        'GR19' => '19',         // J:COMチャンネル
+);
+
 // 首都圏用地上デジタルチャンネルマップ
 // 識別子 => チャンネル番号
+/*
 $GR_CHANNEL_MAP = array(
 	'GR27' => '27',		// NHK
 	'GR26' => '26',		// 教育
@@ -21,7 +40,7 @@ $GR_CHANNEL_MAP = array(
 //	'GR32' => '32',		// テレ玉
 	'GR28' => '28',		// 大学
 );
-
+*/
 
 /*
 // 大阪地区デジタルチャンネルマップ（参考）
@@ -72,7 +91,7 @@ $RECORD_MODE = array(
 
 
 // 第一チューナー設定(主にPTn)
-define( 'TUNER_UNIT1', 0 );							// 各放送波の論理チューナ数(地上波･衛星波で共用 ex.PT1が1枚なら2)
+define( 'TUNER_UNIT1', 2 );							// 各放送波の論理チューナ数(地上波･衛星波で共用 ex.PT1が1枚なら2)
 define( 'PT1_CMD_NUM', 0 );							// 録画コマンド指定 $rec_cmds中のどれを使うか選択 DVBドライバーで地デジだけの場合はrecdvbでOKなはず
 
 
@@ -119,7 +138,7 @@ $rec_cmds = array(
 		'httpS'    => FALSE,
 	),
 );
-define( 'USE_DORECORD', FALSE );			// do-recored.shを使用する場合はTRUE(非推奨)
+define( 'USE_DORECORD', TRUE );			// do-recored.shを使用する場合はTRUE(非推奨)
 
 
 // PTシリーズ以外のチューナーの個別設定(チューナー数に応じて増やすこと)
